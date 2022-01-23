@@ -4,8 +4,8 @@ from typing import Any
 from urllib.parse import urljoin
 from httpx import AsyncClient, Response
 
-from cyanide.event import EventSource
-from cyanide.exception import OpenApiError, InvalidTargetError
+from cyan.event import EventSource
+from cyan.exception import OpenApiError, InvalidTargetError
 
 # 参考 https://bot.q.qq.com/wiki/develop/api/openapi/user/guilds.html。
 _GUILD_QUERY_LIMIT = 100
@@ -162,7 +162,7 @@ class Bot:
             以 `User` 类型表示的当前用户。
         """
 
-        from cyanide.model.user import User
+        from cyan.model.user import User
 
         response = await self.get("/users/@me")
         user = response.json()
@@ -180,7 +180,7 @@ class Bot:
             以 `Guild` 类型表示的频道。
         """
 
-        from cyanide.model.guild import Guild
+        from cyan.model.guild import Guild
 
         response = await self.get(f"/guilds/{identifier}")
         return Guild(self, response.json())
@@ -193,7 +193,7 @@ class Bot:
             以 `Guild` 类型表示频道的 `list` 集合。
         """
 
-        from cyanide.model.guild import Guild
+        from cyan.model.guild import Guild
 
         cur = None
         guilds = list[Guild]()
@@ -219,7 +219,7 @@ class Bot:
             以 `Channel` 类型表示的子频道。
         """
 
-        from cyanide.model.channel import Channel
+        from cyan.model.channel import Channel
 
         channel = await self._get_channel_core(identifier)
         if isinstance(channel, Channel):
@@ -237,7 +237,7 @@ class Bot:
             以 `Channel` 类型表示的子频道。
         """
 
-        from cyanide.model.channel import ChannelGroup
+        from cyan.model.channel import ChannelGroup
 
         channel = await self._get_channel_core(identifier)
         if isinstance(channel, ChannelGroup):
@@ -245,7 +245,7 @@ class Bot:
         raise InvalidTargetError("指定的 ID 不为子频道组。")
 
     async def _get_channel_core(self, identifier: str):
-        from cyanide.model.channel import parse as parse_channel
+        from cyan.model.channel import parse as parse_channel
 
         response = await self.get(f"/channels/{identifier}")
         return await parse_channel(self, response.json())

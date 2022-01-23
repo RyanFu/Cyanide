@@ -1,7 +1,7 @@
 from abc import abstractmethod
 from typing import Any
 
-from cyanide.bot import Bot
+from cyan.bot import Bot
 
 
 class Model:

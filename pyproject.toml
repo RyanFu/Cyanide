@@ -25,6 +25,7 @@ pyright = "^0.0.13"
 [tool.pyright]
 include = ["cyanide"]
 exclude = ["**/node_modules", "**/__pycache__"]
+pythonVersion = "3.9"
 typeCheckingMode = "strict"
 reportImportCycles = "none"
 

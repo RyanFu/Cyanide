@@ -6,6 +6,7 @@ authors = ["Ricky8955555 <397050061@qq.com>", "worldmozara <worldmozara@gmail.co
 license = "MIT"
 readme = "README.md"
 repository = "https://gitlab.huajitech.net/worldmozara/cyanide"
+documentation = "https://huajitech.proj.zone/cyan"
 keywords = ["bot", "qq", "qqbot"]
 packages = [
   { include = "cyan" },
@@ -21,9 +22,11 @@ frozendict = "^2.2.0"
 [tool.poetry.dev-dependencies]
 flake8 = "^4.0.1"
 pyright = "^0.0.13"
+sphinx = "^4.4.0"
+sphinx-rtd-theme = "^1.0.0"
 
 [tool.pyright]
-include = ["cyan"]
+include = ["cyan", "examples"]
 exclude = ["**/node_modules", "**/__pycache__"]
 pythonVersion = "3.9"
 typeCheckingMode = "strict"

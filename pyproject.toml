@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "cyanbot"
+name = "cyanidebot"
 version = "0.1.0"
 description = "A Python SDK for QQ Bot."
 authors = ["Ricky8955555 <397050061@qq.com>", "worldmozara <worldmozara@gmail.com>"]

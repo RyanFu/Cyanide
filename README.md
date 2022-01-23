@@ -14,9 +14,13 @@ Cyanide 是一个适用于 Python 3.9 的简单易用的 QQ 机器人 SDK，基�
 
 ## 仓库
 
-HuajiTech GitLab（主仓库）：https://gitlab.huajitech.net/huajitech/cyan
+HuajiTech GitLab（主仓库）：
+- Cyanide: https://gitlab.huajitech.net/worldmozara/cyanide
+- Cyan: https://gitlab.huajitech.net/huajitech/cyan
 
-GitHub：https://github.com/huajitech/cyan
+GitHub：
+- Cyanide: https://github.com/WorldMoZara/Cyanide
+- Cyan: https://github.com/huajitech/cyan
 
 ## 特性
 

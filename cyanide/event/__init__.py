@@ -10,12 +10,12 @@ from websockets.client import connect
 from websockets.exceptions import ConnectionClosed
 from websockets.legacy.client import WebSocketClientProtocol
 
-from cyan.exception import InvalidOperationError
+from cyanide.exception import InvalidOperationError
 
 
 if TYPE_CHECKING:
-    from cyan.event.events._connection import ReadyEventData
-    from cyan.bot import Bot
+    from cyanide.event.events._connection import ReadyEventData
+    from cyanide.bot import Bot
 
 
 EventHandler = (
@@ -424,7 +424,7 @@ class EventSource:
         await self.send(Operation.RESUME, payload)
 
     async def _identify(self):
-        from cyan.event.events._connection import ReadyEvent
+        from cyanide.event.events._connection import ReadyEvent
 
         self.get_event(ReadyEvent).bind(self._on_ready)
         payload = {

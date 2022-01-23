@@ -1,7 +1,7 @@
 from typing import Any
 
-from cyan.event import Event, EventInfo, Intent
-from cyan.model.guild import Guild
+from cyanide.event import Event, EventInfo, Intent
+from cyanide.model.guild import Guild
 
 
 class _GuildEvent(Event):

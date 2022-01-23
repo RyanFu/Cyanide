@@ -4,15 +4,15 @@ from abc import abstractmethod
 from typing import Any
 from typing import Any, TypeVar
 
-from cyan.bot import Bot
-from cyan.model.channel import Channel
-from cyan.model.message import (
+from cyanide.bot import Bot
+from cyanide.model.channel import Channel
+from cyanide.model.message import (
     ContentElement,
     MessageElement,
     MessageElementParseResult,
     message_element_parser
 )
-from cyan.model.user import User
+from cyanide.model.user import User
 
 
 class ParsableContentElement(ContentElement):

@@ -1,10 +1,10 @@
 from datetime import datetime, timedelta
 from typing import Any
 
-from cyan.bot import Bot
-from cyan.model.guild import Guild
-from cyan.model.renovatable import AsyncRenovatable
-from cyan.model.user import User
+from cyanide.bot import Bot
+from cyanide.model.guild import Guild
+from cyanide.model.renovatable import AsyncRenovatable
+from cyanide.model.user import User
 
 
 class Member(User, AsyncRenovatable["Member"]):

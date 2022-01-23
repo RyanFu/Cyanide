@@ -2,8 +2,8 @@ import asyncio
 import warnings
 from typing import Awaitable, Callable, NoReturn
 
-from cyan.bot import Bot, Ticket
-from cyan.event import Event
+from cyanide.bot import Bot, Ticket
+from cyanide.event import Event
 
 
 BotStartedHandler = Callable[[Bot], Awaitable[None | NoReturn]]

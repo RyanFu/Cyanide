@@ -1,7 +1,7 @@
 from typing import Any
 
-from cyan.event import Event, EventInfo, Intent
-from cyan.model.member import Member
+from cyanide.event import Event, EventInfo, Intent
+from cyanide.model.member import Member
 
 
 class _MemberEvent(Event):

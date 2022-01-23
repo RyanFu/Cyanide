@@ -2,16 +2,16 @@ from datetime import datetime
 from enum import Enum
 from typing import TYPE_CHECKING, Any
 
-from cyan.bot import Bot
-from cyan.constant import DEFAULT_ID
-from cyan.exception import OperationFailedError
-from cyan.model import Model
-from cyan.model.renovatable import AsyncRenovatable
-from cyan.model.user import User
+from cyanide.bot import Bot
+from cyanide.constant import DEFAULT_ID
+from cyanide.exception import OperationFailedError
+from cyanide.model import Model
+from cyanide.model.renovatable import AsyncRenovatable
+from cyanide.model.user import User
 
 
 if TYPE_CHECKING:
-    from cyan.model.channel import AppChannel
+    from cyanide.model.channel import AppChannel
 
 
 class RemindType(Enum):
@@ -158,7 +158,7 @@ class Schedule(Model, AsyncRenovatable["Schedule"]):
     # TODO: 实现日程信息修改。
 
     async def renovate(self):
-        from cyan.model.channel import ScheduleChannel
+        from cyanide.model.channel import ScheduleChannel
 
         channel = await self.channel.renovate()
         if not isinstance(channel, AppChannel):

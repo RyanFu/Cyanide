@@ -1,7 +1,7 @@
 from typing import Any
 
-from cyan.event import Event, EventInfo, Intent
-from cyan.model.message import Message
+from cyanide.event import Event, EventInfo, Intent
+from cyanide.model.message import Message
 
 
 class _MessageReceivedEvent(Event):

@@ -1,7 +1,7 @@
 from typing import Any
 
-from cyan.event import Event, EventInfo, Intent, NotSupported
-from cyan.model.channel import Channel, parse
+from cyanide.event import Event, EventInfo, Intent, NotSupported
+from cyanide.model.channel import Channel, parse
 
 
 class _ChannelEvent(Event):

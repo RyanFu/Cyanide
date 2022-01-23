@@ -2,16 +2,16 @@ from datetime import timedelta, datetime
 from typing import TYPE_CHECKING, Any
 from httpx import AsyncClient
 
-from cyan.color import ARGB
-from cyan.exception import InvalidTargetError, OpenApiError
-from cyan.bot import Bot
-from cyan.model import Model
-from cyan.model.renovatable import AsyncRenovatable
+from cyanide.color import ARGB
+from cyanide.exception import InvalidTargetError, OpenApiError
+from cyanide.bot import Bot
+from cyanide.model import Model
+from cyanide.model.renovatable import AsyncRenovatable
 
 
 if TYPE_CHECKING:
-    from cyan.model.member import Member
-    from cyan.model.role import Role
+    from cyanide.model.member import Member
+    from cyanide.model.role import Role
 
 
 # 参考 https://bot.q.qq.com/wiki/develop/pythonsdk/api/member/get_guild_members.html#queryparams。
@@ -90,7 +90,7 @@ class Guild(Model, AsyncRenovatable["Guild"]):
             以 `Member` 类型表示成员的 `list` 集合。
         """
 
-        from cyan.model.member import Member
+        from cyanide.model.member import Member
 
         cur = None
         members = list[Member]()
@@ -124,7 +124,7 @@ class Guild(Model, AsyncRenovatable["Guild"]):
             以 `Member` 类型表示的成员。
         """
 
-        from cyan.model.member import Member
+        from cyanide.model.member import Member
 
         response = await self.bot.get(f"/guilds/{self.identifier}/members/{identifier}")
         member = response.json()
@@ -138,7 +138,7 @@ class Guild(Model, AsyncRenovatable["Guild"]):
             以 `Channel` 类型表示子频道的 `list` 集合。
         """
 
-        from cyan.model.channel import Channel
+        from cyanide.model.channel import Channel
 
         return [
             channel
@@ -154,7 +154,7 @@ class Guild(Model, AsyncRenovatable["Guild"]):
             以 `ChannelGroup` 类型表示子频道组的 `list` 集合。
         """
 
-        from cyan.model.channel import ChannelGroup
+        from cyanide.model.channel import ChannelGroup
 
         return [
             channel
@@ -163,7 +163,7 @@ class Guild(Model, AsyncRenovatable["Guild"]):
         ]
 
     async def _get_channels_core(self):
-        from cyan.model.channel import parse as channel_parse
+        from cyanide.model.channel import parse as channel_parse
 
         response = await self.bot.get(f"/guilds/{self.identifier}/channels")
         channels = response.json()
@@ -194,7 +194,7 @@ class Guild(Model, AsyncRenovatable["Guild"]):
             以 `Role` 类型表示身份组的 `list` 集合。
         """
 
-        from cyan.model.role import Role
+        from cyanide.model.role import Role
 
         response = await self.bot.get(f"/guilds/{self.identifier}/roles")
         roles = response.json()["roles"]
@@ -235,7 +235,7 @@ class Guild(Model, AsyncRenovatable["Guild"]):
             以 `Role` 类型表示的身份组。
         """
 
-        from cyan.model.role import Role
+        from cyanide.model.role import Role
 
         _filter = {
             "name": int(name is not None),
@@ -291,7 +291,7 @@ class Guild(Model, AsyncRenovatable["Guild"]):
             以 `Member` 类型表示管理员的 `list` 集合。
         """
 
-        from cyan.model.role import DefaultRoleId
+        from cyanide.model.role import DefaultRoleId
 
         members = await self.get_members()
         return [
@@ -309,7 +309,7 @@ class Guild(Model, AsyncRenovatable["Guild"]):
             - member: 将要添加到当前频道的成员
         """
 
-        from cyan.model.role import DefaultRoleId
+        from cyanide.model.role import DefaultRoleId
 
         await self.bot.put(
             f"/guilds/{self.identifier}/members/{member.identifier}"
@@ -324,7 +324,7 @@ class Guild(Model, AsyncRenovatable["Guild"]):
             - member: 将要从当前频道移除的管理员
         """
 
-        from cyan.model.role import DefaultRoleId
+        from cyanide.model.role import DefaultRoleId
 
         await self.bot.delete(
             f"/guilds/{self.identifier}/members/{member.identifier}"

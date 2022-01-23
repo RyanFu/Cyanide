@@ -2,9 +2,9 @@
 复读机示例。
 """
 
-from cyanide import Session, Ticket
-from cyanide.event.events import ChannelMessageReceivedEvent
-from cyanide.model import Message
+from cyan import Session, Ticket
+from cyan.event.events import ChannelMessageReceivedEvent
+from cyan.model import Message
 
 session = Session(
     "https://sandbox.api.sgroup.qq.com/",

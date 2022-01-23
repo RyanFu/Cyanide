@@ -1,6 +1,6 @@
 from typing import Any
 
-from cyanide.event import Event, EventInfo, Intent
+from cyan.event import Event, EventInfo, Intent
 
 
 class ReadyEvent(Event):

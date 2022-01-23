@@ -1,8 +1,8 @@
 from typing import Any
 from httpx import AsyncClient
 
-from cyanide.bot import Bot
-from cyanide.model import Model
+from cyan.bot import Bot
+from cyan.model import Model
 
 
 class User(Model):

@@ -2,17 +2,17 @@ from datetime import datetime
 from enum import Enum
 from typing import Any
 
-from cyanide import OpenApiError
+from cyan import OpenApiError
 
-from cyanide.constant import DEFAULT_ID
-from cyanide.bot import Bot
-from cyanide.exception import InvalidOperationError
-from cyanide.model.guild import Guild
-from cyanide.model import Model
-from cyanide.model.member import Member
-from cyanide.model.renovatable import AsyncRenovatable
-from cyanide.model.role import DefaultRoleId
-from cyanide.util._enum import get_enum_key
+from cyan.constant import DEFAULT_ID
+from cyan.bot import Bot
+from cyan.exception import InvalidOperationError
+from cyan.model.guild import Guild
+from cyan.model import Model
+from cyan.model.member import Member
+from cyan.model.renovatable import AsyncRenovatable
+from cyan.model.role import DefaultRoleId
+from cyan.util._enum import get_enum_key
 
 
 class TextChannelType(Enum):
@@ -356,7 +356,7 @@ class TextChannel(Channel):
     文字子频道。
     """
 
-    from cyanide.model.message import Message, MessageContent, Sendable
+    from cyan.model.message import Message, MessageContent, Sendable
 
     @property
     def text_channel_type(self) -> 'TextChannelType | int':
@@ -382,7 +382,7 @@ class TextChannel(Channel):
             否则，返回表示以 `Message` 类型表示的所发送消息。
         """
 
-        from cyanide.model.message import create_message_content
+        from cyan.model.message import create_message_content
 
         await self._send(create_message_content(*message), target)
 
@@ -398,7 +398,7 @@ class TextChannel(Channel):
             否则，返回表示以 `Message` 类型表示的所发送消息。
         """
 
-        from cyanide.model.message import create_message_content
+        from cyan.model.message import create_message_content
 
         await self._send(create_message_content(*message), None)
 
@@ -413,7 +413,7 @@ class TextChannel(Channel):
             以 `Message` 类型表示的消息。
         """
 
-        from cyanide.model.message import Message
+        from cyan.model.message import Message
 
         response = await self.bot.get(f"/channels/{self.identifier}/messages/{identifier}")
         message = response.json()
@@ -424,7 +424,7 @@ class TextChannel(Channel):
         message: MessageContent,
         replying_target: 'Message | None'
     ):
-        from cyanide.model.message import Message, MessageContent, MessageAuditInfo
+        from cyan.model.message import Message, MessageContent, MessageAuditInfo
 
         content = MessageContent(message).to_dict()
         if replying_target:
@@ -475,7 +475,7 @@ class ScheduleChannel(AppChannel):
     日程子频道。
     """
 
-    from cyanide.model.schedule import RemindType
+    from cyan.model.schedule import RemindType
 
     @staticmethod
     def from_app_channel(channel: AppChannel):
@@ -500,7 +500,7 @@ class ScheduleChannel(AppChannel):
             以 `Schedule` 类型表示日程的 `list` 集合。
         """
 
-        from cyanide.model.schedule import Schedule
+        from cyan.model.schedule import Schedule
 
         response = await self.bot.get(f"/channels/{self.identifier}/schedules")
         schedules = response.json()
@@ -520,7 +520,7 @@ class ScheduleChannel(AppChannel):
             以 `Schedule` 类型表示的日程。
         """
 
-        from cyanide.model.schedule import Schedule
+        from cyan.model.schedule import Schedule
 
         response = await self.bot.get(f"/channels/{self.identifier}/schedules/{identifier}")
         schedule = response.json()
@@ -546,7 +546,7 @@ class ScheduleChannel(AppChannel):
             - destination: 日程指向目标子频道
         """
 
-        from cyanide.model.schedule import Schedule
+        from cyan.model.schedule import Schedule
 
         schedule = {
             "name": name,

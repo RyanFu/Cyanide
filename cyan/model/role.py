@@ -1,12 +1,12 @@
 from typing import Any
 
-from cyanide.bot import Bot
-from cyanide.color import ARGB
-from cyanide.exception import InvalidOperationError
-from cyanide.model.guild import Guild
-from cyanide.model import Model
-from cyanide.model.member import Member
-from cyanide.model.renovatable import AsyncRenovatable
+from cyan.bot import Bot
+from cyan.color import ARGB
+from cyan.exception import InvalidOperationError
+from cyan.model.guild import Guild
+from cyan.model import Model
+from cyan.model.member import Member
+from cyan.model.renovatable import AsyncRenovatable
 
 
 class DefaultRoleId:

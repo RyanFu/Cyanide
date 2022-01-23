@@ -4,13 +4,13 @@ from datetime import datetime
 from frozendict import frozendict
 from typing import TYPE_CHECKING, Any, Callable, Iterable, Union
 
-from cyanide.bot import Bot
-from cyanide.model import Model
-from cyanide.model.user import User
+from cyan.bot import Bot
+from cyan.model import Model
+from cyan.model.user import User
 
 
 if TYPE_CHECKING:
-    from cyanide.model.channel import TextChannel
+    from cyan.model.channel import TextChannel
 
 
 class MessageElement:
@@ -104,7 +104,7 @@ class MessageContent(list[MessageElement]):
             以 `str` 类型表示消息内容的所有纯文本。
         """
 
-        from cyanide.model.message.elements._content import PlainText
+        from cyan.model.message.elements._content import PlainText
 
         return " ".join([element.content for element in self if isinstance(element, PlainText)])
 
@@ -260,7 +260,7 @@ def create_message_content(*elements: Sendable):
         包含指定元素的 `MessageContent`。
     """
 
-    from cyanide.model.message.elements._content import PlainText
+    from cyan.model.message.elements._content import PlainText
 
     content = MessageContent()
     for element in elements:
@@ -292,4 +292,4 @@ class MessageAuditInfo(Model):
         return self._props["data"]["message_audit"]["audit_id"]
 
 
-from cyanide.model.message import elements  # type: ignore
+from cyan.model.message import elements  # type: ignore

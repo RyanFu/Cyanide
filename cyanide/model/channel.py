@@ -359,7 +359,7 @@ class TextChannel(Channel):
     from cyanide.model.message import Message, MessageContent, Sendable
 
     @property
-    def text_channel_type(self) -> TextChannelType | int:
+    def text_channel_type(self) -> 'TextChannelType | int':
         """
         文字子频道类型。
 
@@ -422,7 +422,7 @@ class TextChannel(Channel):
     async def _send(
         self,
         message: MessageContent,
-        replying_target: Message | None
+        replying_target: 'Message | None'
     ):
         from cyanide.model.message import Message, MessageContent, MessageAuditInfo
 
@@ -459,7 +459,7 @@ class AppChannel(Channel):
     """
 
     @property
-    def app_channel_type(self) -> AppChannelType | int:
+    def app_channel_type(self) -> 'AppChannelType | int':
         """
         应用子频道类型。
 
@@ -533,7 +533,7 @@ class ScheduleChannel(AppChannel):
         end_time: datetime,
         remind_type: RemindType = RemindType.SILENT,
         description: str = "",
-        destination: Channel | None = None
+        destination: 'Channel | None' = None
     ):
         """
         异步在当前子频道创建日程。
@@ -598,8 +598,8 @@ _CHANNEL_TYPE_MAPPING = {
 async def parse(
     bot: Bot,
     _dict: dict[str, Any],
-    guild: Guild | None = None
-) -> Channel | ChannelGroup:
+    guild: 'Guild | None' = None
+) -> 'Channel | ChannelGroup':
     """
     解析子频道信息字典为 `Channel` 或 `ChannelGroup` 类型。
 

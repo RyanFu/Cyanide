@@ -6,7 +6,7 @@ from cyanide.bot import Bot, Ticket
 from cyanide.event import Event
 
 
-BotStartedHandler = Callable[[Bot], Awaitable[None | NoReturn]]
+BotStartedHandler = Callable[[Bot], Awaitable['None | NoReturn']]
 
 
 class Session:

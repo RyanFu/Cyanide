@@ -5,7 +5,7 @@ import warnings
 from asyncio.tasks import Task
 from enum import Enum
 from abc import abstractmethod
-from typing import TYPE_CHECKING, Any, Awaitable, Callable, NoReturn
+from typing import TYPE_CHECKING, Any, Awaitable, Callable, NoReturn, Union
 from websockets.client import connect
 from websockets.exceptions import ConnectionClosed
 from websockets.legacy.client import WebSocketClientProtocol
@@ -18,13 +18,10 @@ if TYPE_CHECKING:
     from cyanide.bot import Bot
 
 
-EventHandler = (
-    Callable[
-        [Any], Awaitable[None] | Awaitable[NoReturn]
-    ] | Callable[
-        [Any, Any], Awaitable[None] | Awaitable[NoReturn]
-    ]
-)
+EventHandler = Union[
+    Callable[[Any], 'Awaitable[None] | Awaitable[NoReturn]'],
+    Callable[[Any, Any], 'Awaitable[None] | Awaitable[NoReturn]']
+]
 """
 事件处理器。
 """
@@ -285,12 +282,12 @@ class EventSource:
     _websocket: WebSocketClientProtocol
     _bot: "Bot"
     _serial_code: int
-    _session: str | None
+    _session: 'str | None'
     _authorization: str
     _connected: bool
-    _heartbeat_task: Task[NoReturn] | None
+    _heartbeat_task: 'Task[NoReturn] | None'
     _event_provider: _EventProvider
-    _task: Task[None] | None
+    _task: 'Task[None] | None'
 
     def __init__(self, bot: "Bot", authorization: str):
         self._websocket = WebSocketClientProtocol()
@@ -469,12 +466,23 @@ class EventSource:
     async def _handle(self, content: dict[str, Any]):
         operation = Operation(content["op"])
         self._serial_code = content.get("s", self._serial_code)
-        match operation:
-            case Operation.EVENT:
-                await self._call_events(content["t"], content["d"])
-            case Operation.RECONNECT:
-                await self._resume()
-            case Operation.CONNECTED:
-                self._set_heartbeat(content["d"]["heartbeat_interval"])
-            case Operation.HEARTBEAT:
-                await self._send_heartbeat()
+        # match operation:
+        #     case Operation.EVENT:
+        #         await self._call_events(content["t"], content["d"])
+        #     case Operation.RECONNECT:
+        #         await self._resume()
+        #     case Operation.CONNECTED:
+        #         self._set_heartbeat(content["d"]["heartbeat_interval"])
+        #     case Operation.HEARTBEAT:
+        #         await self._send_heartbeat()
+        if operation == Operation.CONNECTED:
+            self._set_heartbeat(content["d"]["heartbeat_interval"])
+        else:
+            async_behaviour = {
+                Operation.EVENT: lambda: self._call_events(
+                    content["t"], content["d"]
+                ),
+                Operation.RECONNECT: lambda: self._resume(),
+                Operation.HEARTBEAT: lambda: self._send_heartbeat()
+            }
+            await async_behaviour[operation]()

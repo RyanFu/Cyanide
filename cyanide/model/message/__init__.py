@@ -2,7 +2,7 @@ from abc import abstractmethod
 from dataclasses import dataclass
 from datetime import datetime
 from frozendict import frozendict
-from typing import TYPE_CHECKING, Any, Callable, Iterable
+from typing import TYPE_CHECKING, Any, Callable, Iterable, Union
 
 from cyanide.bot import Bot
 from cyanide.model import Model
@@ -65,7 +65,7 @@ class ContentElement(MessageElement):
         _dict["content"] = content
 
 
-MessageElementParser = Callable[[Bot, dict[str, Any]], MessageElementParseResult | None]
+MessageElementParser = Callable[[Bot, dict[str, Any]], 'MessageElementParseResult | None']
 """
 消息元素解析器。
 
@@ -226,7 +226,7 @@ class Message(Model):
         return Message(bot, _dict, content)
 
 
-Sendable = MessageElement | str | Message | Iterable[MessageElement]
+Sendable = Union[MessageElement, str, Message, Iterable[MessageElement]]
 
 
 def create_message_content(*elements: Sendable):

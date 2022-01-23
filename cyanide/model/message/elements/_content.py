@@ -30,7 +30,7 @@ class ParsableContentElement(ContentElement):
 
     @staticmethod
     @abstractmethod
-    def parse(bot: Bot, _dict: dict[str, Any], match: Match[str]) -> ContentElement | None:
+    def parse(bot: Bot, _dict: dict[str, Any], match: Match[str]) -> 'ContentElement | None':
         """
         解析匹配结果。
 

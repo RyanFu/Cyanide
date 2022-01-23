@@ -104,7 +104,7 @@ class MessageContent(list[MessageElement]):
             以 `str` 类型表示消息内容的所有纯文本。
         """
 
-        from cyan.model.message.elements._content import PlainText
+        from cyanide.model.message.elements._content import PlainText
 
         return " ".join([element.content for element in self if isinstance(element, PlainText)])
 

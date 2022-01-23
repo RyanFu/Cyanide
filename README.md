@@ -4,7 +4,9 @@
 
 ## 简介
 
-Cyan 是一个 Python QQ 机器人 SDK，基于 Python 的类型注解和异步特性。
+Cyanide 是一个 Python QQ 机器人 SDK，基于 Python 的类型注解和异步特性。
+
+该项目 fork 自 [Cyan](https://gitlab.huajitech.net/huajitech/cyan)。
 
 ## 特性
 
@@ -16,9 +18,9 @@ Cyan 是一个 Python QQ 机器人 SDK，基于 Python 的类型注解和异步�
 ## 示例
 
 ```py
-from cyan import Session, Ticket
-from cyan.event.events import ChannelMessageReceivedEvent
-from cyan.model import Message
+from cyanide import Session, Ticket
+from cyanide.event.events import ChannelMessageReceivedEvent
+from cyanide.model import Message
 
 session = Session(
     "https://sandbox.api.sgroup.qq.com/",

@@ -4,10 +4,10 @@
 
 <div align="center">
 
-[![Pipeline Status](https://gitlab.huajitech.net/huajitech/cyan/badges/main/pipeline.svg)](https://gitlab.huajitech.net/huajitech/cyan/-/commits/main)
-[![Python Version](https://img.shields.io/badge/python-3.10%2B-blue)](https://gitlab.huajitech.net/huajitech/cyan)
-[![PyPI - License](https://img.shields.io/pypi/l/cyanbot)](https://gitlab.huajitech.net/huajitech/cyan)
-[![PyPI](https://img.shields.io/pypi/v/cyanbot)](https://gitlab.huajitech.net/huajitech/cyan)
+[![Pipeline Status](https://gitlab.huajitech.net/worldmozara/cyanide/badges/main/pipeline.svg)](https://gitlab.huajitech.net/worldmozara/cyanide/-/commits/main)
+[![Python Version](https://img.shields.io/badge/python-3.9%2B-blue)](https://gitlab.huajitech.net/worldmozara/cyanide)
+[![PyPI - License](https://img.shields.io/pypi/l/cyanidebot)](https://gitlab.huajitech.net/worldmozara/cyanide)
+[![PyPI](https://img.shields.io/pypi/v/cyanidebot)](https://gitlab.huajitech.net/worldmozara/cyanide)
 
 </div>
 

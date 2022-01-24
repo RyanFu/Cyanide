@@ -61,7 +61,10 @@ def parsable_content_element(cls: type[_T_ContentElement]) -> type[_T_ContentEle
 
 
 @message_element_parser()
-def parse_content(bot: Bot, _dict: dict[str, Any]) -> 'MessageElementParseResult | None':
+def _parse_content(  # type: ignore
+    bot: Bot,
+    _dict: dict[str, Any]
+) -> Optional[MessageElementParseResult]:
     content: str = _dict["content"]
     if not content:
         return None

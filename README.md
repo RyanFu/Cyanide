@@ -31,7 +31,7 @@ HuajiTech GitLab（主仓库）：
 - Cyan: https://gitlab.huajitech.net/huajitech/cyan
 
 GitHub：
-- Cyanide: https://github.com/WorldMoZara/Cyanide
+- Cyanide: https://github.com/NCBM/Cyanide
 - Cyan: https://github.com/huajitech/cyan
 
 ## 特性
@@ -53,9 +53,9 @@ pip install cyanidebot
 ## 示例
 
 ```py
-from cyanide import Session, Ticket
-from cyanide.event.events import ChannelMessageReceivedEvent
-from cyanide.model import Message
+from cyan import Session, Ticket
+from cyan.event.events import ChannelMessageReceivedEvent
+from cyan.model import Message
 
 session = Session(
     "https://sandbox.api.sgroup.qq.com/",

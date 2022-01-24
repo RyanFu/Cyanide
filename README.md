@@ -8,6 +8,7 @@
 [![Python Version](https://img.shields.io/badge/python-3.9%2B-blue)](https://gitlab.huajitech.net/worldmozara/cyanide)
 [![PyPI - License](https://img.shields.io/pypi/l/cyanidebot)](https://gitlab.huajitech.net/worldmozara/cyanide)
 [![PyPI](https://img.shields.io/pypi/v/cyanidebot)](https://gitlab.huajitech.net/worldmozara/cyanide)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/cyanidebot)](https://pypi.org/project/cyanidebot/)
 
 </div>
 

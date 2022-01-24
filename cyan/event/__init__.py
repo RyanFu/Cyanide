@@ -5,7 +5,7 @@ import warnings
 from asyncio.tasks import Task
 from enum import Enum
 from abc import abstractmethod
-from typing import TYPE_CHECKING, Any, Awaitable, Callable, NoReturn, Union
+from typing import TYPE_CHECKING, Any, Awaitable, Callable, NoReturn, Union, Optional
 from websockets.client import connect
 from websockets.exceptions import ConnectionClosed
 from websockets.legacy.client import WebSocketClientProtocol
@@ -19,8 +19,8 @@ if TYPE_CHECKING:
 
 
 EventHandler = Union[
-    Callable[[Any], 'Awaitable[None] | Awaitable[NoReturn]'],
-    Callable[[Any, Any], 'Awaitable[None] | Awaitable[NoReturn]']
+    Callable[[Any], Union[Awaitable[None], Awaitable[NoReturn]]],
+    Callable[[Any, Any], Union[Awaitable[None], Awaitable[NoReturn]]]
 ]
 """
 事件处理器。
@@ -288,12 +288,12 @@ class EventSource:
     _websocket: WebSocketClientProtocol
     _bot: "Bot"
     _serial_code: int
-    _session: 'str | None'
+    _session: Optional[str]
     _authorization: str
     _connected: bool
-    _heartbeat_task: 'Task[NoReturn] | None'
+    _heartbeat_task: Optional[Task[NoReturn]]
     _event_provider: _EventProvider
-    _task: 'Task[None] | None'
+    _task: Optional[Task[None]]
 
     def __init__(self, bot: "Bot", authorization: str):
         self._websocket = WebSocketClientProtocol()

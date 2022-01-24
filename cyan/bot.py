@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from types import TracebackType
-from typing import TYPE_CHECKING, Any, Union
+from typing import TYPE_CHECKING, Any, Union, Optional
 from urllib.parse import urljoin
 from httpx import AsyncClient, Response
 
@@ -65,7 +65,7 @@ class Bot:
 
         return self._event_source
 
-    async def get(self, path: str, params: 'dict[str, Any] | None' = None) -> Response:
+    async def get(self, path: str, params: Optional[dict[str, Any]] = None) -> Response:
         """
         异步向服务器请求 GET 操作。
 
@@ -84,7 +84,7 @@ class Bot:
     async def post(
         self,
         path: str,
-        params: 'dict[str, Any] | None' = None,
+        params: Optional[dict[str, Any]] = None,
         content: Any = None
     ) -> Response:
         """
@@ -106,7 +106,7 @@ class Bot:
     async def put(
         self,
         path: str,
-        params: 'dict[str, Any] | None' = None,
+        params: Optional[dict[str, Any]] = None,
         content: Any = None
     ) -> Response:
         """
@@ -128,7 +128,7 @@ class Bot:
     async def delete(
         self,
         path: str,
-        params: 'dict[str, Any] | None' = None,
+        params: Optional[dict[str, Any]] = None,
         content: Any = None
     ) -> Response:
         """
@@ -151,7 +151,7 @@ class Bot:
     async def patch(
         self,
         path: str,
-        params: 'dict[str, Any] | None' = None,
+        params: Optional[dict[str, Any]] = None,
         content: Any = None
     ) -> Response:
         """

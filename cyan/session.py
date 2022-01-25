@@ -1,12 +1,12 @@
 import asyncio
 import warnings
-from typing import Awaitable, Callable, NoReturn
+from typing import Awaitable, Callable, NoReturn, Union
 
 from cyan.bot import Bot, Ticket
 from cyan.event import Event, EventHandler
 
 
-BotStartedHandler = Callable[[Bot], Awaitable['None | NoReturn']]
+BotStartedHandler = Callable[[Bot], Awaitable[Union[None, NoReturn]]]
 
 
 class Session:

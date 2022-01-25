@@ -222,9 +222,9 @@ class Guild(Model, AsyncRenovatable["Guild"]):
 
     async def create_role(
         self,
-        name: 'str | None' = None,
-        color: 'ARGB | None' = None,
-        shown: 'bool | None' = None
+        name: Optional[str] = None,
+        color: Optional[ARGB] = None,
+        shown: Optional[bool] = None
     ) -> "Role":
         """
         异步在当前频道创建身份组。

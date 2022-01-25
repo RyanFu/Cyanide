@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Any, Optional
 
 from cyan.bot import Bot
 from cyan.color import ARGB
@@ -186,9 +186,9 @@ class Role(Model, AsyncRenovatable["Role"]):
 
     async def _modify(
         self,
-        name: 'str | None' = None,
-        color: 'int | None' = None,
-        shown: 'bool | None' = None
+        name: Optional[str] = None,
+        color: Optional[ARGB] = None,
+        shown: Optional[bool] = None
     ) -> None:
         _filter = {
             "name": int(name is not None),

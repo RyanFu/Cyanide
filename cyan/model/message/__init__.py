@@ -2,7 +2,7 @@ from abc import abstractmethod
 from dataclasses import dataclass
 from datetime import datetime
 from frozendict import frozendict
-from typing import TYPE_CHECKING, Any, Callable, Iterable, Union
+from typing import TYPE_CHECKING, Any, Callable, Iterable, Union, Optional
 
 from cyan.bot import Bot
 from cyan.exception import OperationFailedError
@@ -68,7 +68,7 @@ class ContentElement(MessageElement):
         _dict["content"] = content
 
 
-MessageElementParser = Callable[[Bot, dict[str, Any]], 'MessageElementParseResult | None']
+MessageElementParser = Callable[[Bot, dict[str, Any]], Optional[MessageElementParseResult]]
 """
 消息元素解析器。
 

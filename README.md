@@ -4,10 +4,10 @@
 
 <div align="center">
 
-[![Pipeline Status](https://gitlab.huajitech.net/worldmozara/cyanide/badges/main/pipeline.svg)](https://gitlab.huajitech.net/worldmozara/cyanide/-/commits/main)
-[![Python Version](https://img.shields.io/badge/python-3.9%2B-blue)](https://gitlab.huajitech.net/worldmozara/cyanide)
-[![PyPI - License](https://img.shields.io/pypi/l/cyanidebot)](https://gitlab.huajitech.net/worldmozara/cyanide)
-[![PyPI](https://img.shields.io/pypi/v/cyanidebot)](https://gitlab.huajitech.net/worldmozara/cyanide)
+[![Pipeline Status](https://gitlab.huajitech.net/huajitevh/cyanide/badges/main/pipeline.svg)](https://gitlab.huajitech.net/huajitech/cyanide/-/commits/main)
+[![Python Version](https://img.shields.io/badge/python-3.9%2B-blue)](https://gitlab.huajitech.net/huajitech/cyanide)
+[![PyPI - License](https://img.shields.io/pypi/l/cyanidebot)](https://gitlab.huajitech.net/huajitech/cyanide)
+[![PyPI](https://img.shields.io/pypi/v/cyanidebot)](https://gitlab.huajitech.net/huajitech/cyanide)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/cyanidebot)](https://pypi.org/project/cyanidebot/)
 
 </div>
@@ -27,11 +27,11 @@ Cyanide 是一个适用于 Python 3.9+ 的简单易用的 QQ 机器人 SDK，基
 ## 仓库
 
 HuajiTech GitLab（主仓库）：
-- Cyanide: https://gitlab.huajitech.net/worldmozara/cyanide
+- Cyanide: https://gitlab.huajitech.net/huajitech/cyanide
 - Cyan: https://gitlab.huajitech.net/huajitech/cyan
 
 GitHub：
-- Cyanide: https://github.com/NCBM/Cyanide
+- Cyanide: https://github.com/huajitech/Cyanide
 - Cyan: https://github.com/huajitech/cyan
 
 ## 特性
@@ -47,10 +47,12 @@ GitHub：
 
 1. 通过 `pip` 安装 Cyanide (release)：
     ```bash
-    pip install cyansdk
+    pip install cyanide
     ```
 
-2. Cyanide (daily)：(WIP)
+2. Cyanide (daily)：
+
+从[每日构建](https://github.com/huajitech/Cyanide/actions/workflows/daily-build.yml)获取更新的程序包
 
 ### 文档
 

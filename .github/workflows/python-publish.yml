@@ -36,12 +36,13 @@ jobs:
       with:
         user: __token__
         password: ${{ secrets.PYPI_API_TOKEN }}
-    - name: Create GitHub release
+    - name: Create GitHub release
       uses: marvinpinto/action-automatic-releases@latest
-      with:
+      with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: ${{ env.REL_VER }}
-        title: ${{ env.REL_VER }}
-        prerelease: false
-        files: |
-          dist/*
+        automatic_release_tag: ${{ env.REL_VER }}
+        title: ${{ env.REL_VER }}
+        prerelease: false
+        files: |
+          dist/*
+

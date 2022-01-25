@@ -1,6 +1,6 @@
 from datetime import datetime
 from enum import Enum
-from typing import Any
+from typing import Any, Union, Optional
 
 from cyan.constant import DEFAULT_ID
 from cyan.bot import Bot
@@ -392,7 +392,7 @@ class TextChannel(Channel, ChattableModel[ChannelMessage]):
     async def _send(
         self,
         message: MessageContent,
-        replying_target: ChannelMessage | None
+        replying_target: Optional[ChannelMessage]
     ) -> Union[MessageAuditInfo, ChannelMessage]:
         from cyan.model.message import MessageContent, MessageAuditInfo
 

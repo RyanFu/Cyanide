@@ -187,7 +187,7 @@ class Role(Model, AsyncRenovatable["Role"]):
     async def _modify(
         self,
         name: Optional[str] = None,
-        color: Optional[ARGB] = None,
+        color: Optional[int] = None,
         shown: Optional[bool] = None
     ) -> None:
         _filter = {

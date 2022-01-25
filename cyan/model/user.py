@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Optional
 from httpx import AsyncClient
 
 from cyan.bot import Bot
@@ -115,7 +115,7 @@ class ChattableUser(User, ChattableModel[UserMessage]):
     async def _send(
         self,
         message: MessageContent,
-        replying_target: UserMessage | None
+        replying_target: Optional[UserMessage]
     ) -> UserMessage:
         from cyan.model.message import MessageContent
 

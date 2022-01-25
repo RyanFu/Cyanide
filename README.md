@@ -16,7 +16,7 @@
 
 ## 简介
 
-Cyanide 是一个适用于 Python 3.9 的简单易用的 QQ 机器人 SDK，基于 Python 的类型注解和异步特性。
+Cyanide 是一个适用于 Python 3.9+ 的简单易用的 QQ 机器人 SDK，基于 Python 的类型注解和异步特性。
 
 该项目 fork 自 [Cyan](https://gitlab.huajitech.net/huajitech/cyan)。
 

@@ -5,7 +5,7 @@
 <div align="center">
 
 [![Pipeline Status](https://gitlab.huajitech.net/huajitevh/cyanide/badges/main/pipeline.svg)](https://gitlab.huajitech.net/huajitech/cyanide/-/commits/main)
-[![Python Version](https://img.shields.io/badge/python-3.9%2B-blue)](https://gitlab.huajitech.net/huajitech/cyanide)
+[![Python Version](https://img.shields.io/badge/python-3.6%2B-blue)](https://gitlab.huajitech.net/huajitech/cyanide)
 [![PyPI - License](https://img.shields.io/pypi/l/cyanidebot)](https://gitlab.huajitech.net/huajitech/cyanide)
 [![PyPI](https://img.shields.io/pypi/v/cyanidebot)](https://gitlab.huajitech.net/huajitech/cyanide)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/cyanidebot)](https://pypi.org/project/cyanidebot/)
@@ -16,7 +16,7 @@
 
 ## 简介
 
-Cyanide 是一个适用于 Python 3.9+ 的简单易用的 QQ 机器人 SDK，基于 Python 的类型注解和异步特性。
+Cyanide 是一个适用于 Python 3.6+ 的简单易用的 QQ 机器人 SDK，基于 Python 的类型注解和异步特性。
 
 该项目 fork 自 [Cyan](https://gitlab.huajitech.net/huajitech/cyan)。
 

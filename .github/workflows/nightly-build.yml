@@ -1,12 +1,12 @@
-name: "Nightly Build"
+name: "Daily Build"
 
 on:
     schedule:
         - cron: '0 0 * * *'
 
 jobs:
-    nightly:
-        name: Build Cyanide Nightly
+    build:
+        name: Build Cyanide Daily
         runs-on: ubuntu-latest
 
         steps:

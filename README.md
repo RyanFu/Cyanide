@@ -61,7 +61,7 @@ https://huajitech.proj.zone/cyan
 ```py
 from cyan import Session, Ticket
 from cyan.event import ChannelMessageReceivedEvent
-from cyan.model import Message
+from cyan.model import ChannelMessage
 
 session = Session(
     "https://sandbox.api.sgroup.qq.com/",
@@ -70,7 +70,7 @@ session = Session(
 
 
 @session.on(ChannelMessageReceivedEvent)
-async def message_received(data: Message):
+async def message_received(data: ChannelMessage):
     await data.reply("收到消息：\n", data)
 
 session.run()

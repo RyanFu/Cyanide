@@ -43,12 +43,18 @@ GitHub：
 
 ## 如何使用
 
-通过 `pip` 安装 Cyan：
-```bash
-pip install cyanidebot
-```
+### 安装
 
-文档：https://huajitech.proj.zone/cyan
+1. 通过 `pip` 安装 Cyanide (release)：
+    ```bash
+    pip install cyansdk
+    ```
+
+2. Cyanide (daily)：(WIP)
+
+### 文档
+
+https://huajitech.proj.zone/cyan
 
 ## 示例
 

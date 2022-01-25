@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cyanidebot"
-version = "0.1.1"
+version = "0.2.0"
 description = "A Python SDK for QQ Bot."
 authors = ["Ricky8955555 <397050061@qq.com>", "worldmozara <worldmozara@gmail.com>"]
 license = "MIT"
@@ -24,6 +24,7 @@ flake8 = "^4.0.1"
 pyright = "^0.0.13"
 sphinx = "^4.4.0"
 sphinx-rtd-theme = "^1.0.0"
+toml = "^0.10.2"
 
 [tool.pyright]
 include = ["cyan", "examples"]

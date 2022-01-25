@@ -26,9 +26,11 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install poetry
+        pip install poetry toml
     - name: Build package
-      run: poetry build
+      run: |
+        poetry build
+        echo "REL_VER=v$(cat version)" >> $GITHUB_ENV
     - name: Publish package
       uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
       with:
@@ -39,7 +41,7 @@ jobs:
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         automatic_release_tag: ${{ env.REL_VER }}
-        title: ${{ env.ReleaseVersion }}
+        title: ${{ env.REL_VER }}
         prerelease: false
         files: |
           dist/*
